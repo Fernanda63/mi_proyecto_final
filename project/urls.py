@@ -19,10 +19,10 @@ from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
 from foto.views import (index, PostDetalle, PostListar, 
-                               PostCrear, PostBorrar, PostActualizar,
-                               UserSignUp, UserLogin, UserLogout, 
-                               AvatarActualizar, UserActualizar, MensajeCrear, MensajeListar, 
-                               MensajeDetalle, about )
+                        PostCrear, PostBorrar, PostActualizar,
+                        UserSignUp, UserLogin, UserLogout, 
+                        AvatarActualizar, UserActualizar, MensajeCrear, MensajeListar, 
+                        MensajeDetalle, about, MensajeBorrar)
 from django.contrib.admin.views.decorators import staff_member_required
 
 urlpatterns = [
@@ -41,7 +41,8 @@ urlpatterns = [
     path('foto/mensajes/crear/', MensajeCrear.as_view(), name="foto-mensajes-crear"),
     path('foto/mensajes/<int:pk>/detalle/', MensajeDetalle.as_view(), name="foto-mensajes-detalle"),
     path('foto/mensajes/listar/', MensajeListar.as_view(), name="foto-mensajes-listar"),
-    path('foto/about.html', about.as_view(), name="foto/about.html"),
+    path('foto/mensajes/borrar/', staff_member_required(MensajeBorrar.as_view()), name="foto-mensajes-borrar"),
+    path('foto/about', about, name="about"),
     
 ]
 

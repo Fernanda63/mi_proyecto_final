@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from foto.forms import UsuarioForm
 from foto.models import Avatar, Post, Mensaje
 from django.contrib.auth.admin import User
-from foto.models import About
+
 
 def index(request):
     posts = Post.objects.order_by('-publicado_el').all()
@@ -65,12 +65,12 @@ class MensajeListar(LoginRequiredMixin, ListView):
 
 class MensajeCrear(CreateView):
     model = Mensaje
-    success_url = reverse_lazy("foto-mensajes-crear")
+    success_url = reverse_lazy("foto-listar")
     fields = ['nombre', 'email', 'texto']
 
 class MensajeBorrar(LoginRequiredMixin, DeleteView):
     model = Mensaje
-    success_url = reverse_lazy("foto-mensajes-listar")
+    success_url = reverse_lazy("foto-listar")
 
 def about(request):
     return render(request, "foto/about.html")

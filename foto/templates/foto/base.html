@@ -18,7 +18,7 @@
                     <a class="navbar-brand" href="{% url 'foto-index' %}">
                     {% if user.is_authenticated  and  user.avatar.imagen %}
                         <img src="{{user.avatar.imagen.url}}" height="64">
-                        Hola, {{user}} |
+                        Hola, {{user.first_name}} |
                     {% endif %} 
                     Start Bootstrap
                 </a>
@@ -26,10 +26,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% 'foto/about.html' %}">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'foto-mensajes-crear' %}">Contacto</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
-                        
                         <li class="nav-item"><a class="nav-link" href="{% url 'foto-signup' %}">Registrarse</a></li>
                         {% if user.is_authenticated %}
                             <li class="nav-item"><a class="nav-link" href="{% url 'foto-listar' %}">Admin Blog</a></li>
