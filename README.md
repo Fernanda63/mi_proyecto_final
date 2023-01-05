@@ -16,3 +16,6 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 3)Apretar la tecla ctrl y hacer click sobre el link y se abrirá la pagina
 4)seleccionar la opcion foto/listar/
+
+
+https://github.com/Fernanda63/mi_proyecto_final.git
