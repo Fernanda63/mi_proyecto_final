@@ -6,6 +6,7 @@
     <li>
         {{mensaje.enviado_el}} - - - {{mensaje.email}} - - - {{mensaje.nombre}} 
         <a href="{% url 'foto-mensajes-detalle' mensaje.id %}">Ver</a>
+        <a href="{% url 'foto-mensajes-borrar' mensaje.id %}">Eliminar</a>
     </li>
 {% endfor %}
 </ul>

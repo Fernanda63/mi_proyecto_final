@@ -41,7 +41,7 @@ urlpatterns = [
     path('foto/mensajes/crear/', MensajeCrear.as_view(), name="foto-mensajes-crear"),
     path('foto/mensajes/<int:pk>/detalle/', MensajeDetalle.as_view(), name="foto-mensajes-detalle"),
     path('foto/mensajes/listar/', MensajeListar.as_view(), name="foto-mensajes-listar"),
-    path('foto/mensajes/borrar/', staff_member_required(MensajeBorrar.as_view()), name="foto-mensajes-borrar"),
+    path('foto/mensajes/<int:pk>/borrar/', staff_member_required(MensajeBorrar.as_view()), name="foto-mensajes-borrar"),
     path('foto/about', about, name="about"),
     
 ]
